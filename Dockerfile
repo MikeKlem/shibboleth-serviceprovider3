@@ -22,7 +22,8 @@ LABEL Build docker build --rm --tag $maintainer/$imagename .
 RUN ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
     && echo "NETWORKING=yes" > /etc/sysconfig/network
 
-RUN rm -fr /var/cache/yum/* && yum clean all && \
+RUN rm -fr /var/cache/yum/* && \
+    dnf clean all && \
     rpm --import https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8 && \
     dnf -y install --setopt=tsflags=nodocs https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm &&\
     dnf -y update && \

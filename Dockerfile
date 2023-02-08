@@ -1,16 +1,16 @@
-ARG BASE_REGISTRY=registry1.dso.mil
-ARG BASE_IMAGE=ironbank/redhat/ubi/ubi8
+ARG BASE_REGISTRY=
+ARG BASE_IMAGE=redhat/ubi8
 ARG BASE_TAG=8.7
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 
 # Define args and set a default value
-ARG maintainer=solute
+ARG maintainer=pneumasolutions
 ARG imagename=shibboleth-sp
 ARG version=3.2.1
 
 MAINTAINER $maintainer
-LABEL Vendor="SOLUTE"
+LABEL Vendor="Pneuma Solutions"
 LABEL ImageType="Base"
 LABEL ImageName=$imagename
 LABEL ImageOS=centos8

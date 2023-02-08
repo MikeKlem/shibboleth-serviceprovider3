@@ -71,7 +71,7 @@ ADD system/generate_shibboleth_config.py /usr/local/bin/
 ADD app/requirements.txt /app/
 RUN python3.9 -m venv /app/env \
     && . /app/env/bin/activate \
-    && python -m pip install -U pip==21.0.1 \
+    && python -m pip install -U pip==23.0 \
     && pip install -r /app/requirements.txt
 ADD app/ /app/
 ADD httpd/wsgi.conf /etc/httpd/conf.d/
